@@ -1,8 +1,8 @@
-`timescale 1 ns / 1 ns
+`timescale 1 ns / 1 ps
 `include "phoeniX.v"
 
 `ifndef FIRMWARE
-    `define FIRMWARE "Software\\User_Codes\\test\\test_firmware.hex"
+    `define FIRMWARE "Software\\User_Codes\\code2\\code2_firmware.hex"
 `endif /*FIRMWARE*/
 
 `ifndef START_ADDRESS
@@ -18,7 +18,7 @@ module phoeniX_Testbench;
     //////////////////////
     // Clock Generation //
     //////////////////////
-    parameter CLK_PERIOD = 2;
+    parameter CLK_PERIOD = 1.613;
     reg clk = 1'b1;
     initial begin forever #(CLK_PERIOD/2) clk = ~clk; end
     //initial #(20000 * CLK_PERIOD) $finish;
